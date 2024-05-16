@@ -11,6 +11,6 @@ def resize(img_path, target_size):
 
 
 if __name__ == "__main__":
-    img_path = "./test_img.png"
+    img_path = "./images/Pub-SIG24_textransfer.jpg"
     target_size = (160, 160)
     resize(img_path, target_size)
