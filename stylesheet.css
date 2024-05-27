@@ -137,7 +137,7 @@ span.highlight {
 }
 
 .topnav a {
-  float: left;
+  float: none;
   color: black;
   text-align: center;
   padding: 14px 20px;
@@ -178,14 +178,13 @@ ul li a {
     right: 0px;
     z-index: 1000; /* Set a higher z-index value */
     background-color: #B9D4EE;
-    width: 100%;
     max-width: 800px;
     margin: auto;
 }
 
 .center {
-    margin: 0;
-    position: absolute;
+    margin-top: 20px;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
