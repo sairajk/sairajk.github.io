@@ -138,21 +138,26 @@ span.highlight {
 
 .topnav a {
   float: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: black;
   text-align: center;
-  padding: 14px 20px;
+  padding: 8px 20px;
   text-decoration: none;
   font-size: 17px;
+  line-height: 1;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
+.topnav a:hover,
+.topnav a:focus-visible {
+  background-color: rgba(44, 110, 173, 0.8);
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+  outline: none;
 }
 
 ul {
@@ -170,24 +175,32 @@ ul li a {
 }
 
 .container {
-    height: 40px;
+    height: auto;
+    padding: 4px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
-    border: 10px solid white;
-    top: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    top: 10px;
     left: 0px;
     right: 0px;
     z-index: 1000; /* Set a higher z-index value */
-    background-color: #B9D4EE;
+    background-color: rgba(159, 197, 233, 0.7);
+    backdrop-filter: blur(10px) saturate(130%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+    border-radius: 14px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
     max-width: 800px;
     margin: auto;
 }
 
 .center {
-    margin-top: 20px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 0;
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
 }
 
 .main {
