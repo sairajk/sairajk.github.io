@@ -130,6 +130,13 @@ span.highlight {
   background-color: #ffffd0;
 }
 
+/* Prevent fixed navbar from covering anchor targets */
+#about,
+#publications,
+#projects {
+  scroll-margin-top: 80px;
+}
+
 /* For the Navigation Bar */
 .topnav {
   overflow: hidden;
