@@ -241,6 +241,41 @@ ul li a {
     transform: none;
 }
 
+/* Keep navbar links on one row if the default layout wraps */
+html.nav-compact .topnav .center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    width: max-content;
+    max-width: 100%;
+    transform-origin: center top;
+    transform: scale(var(--nav-scale, 1));
+}
+
+html.nav-compact .topnav a {
+    padding: 6px 10px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+html.nav-compact .topnav a .axure-handwriting {
+    font-size: 1rem !important;
+    letter-spacing: 0.03rem !important;
+    word-spacing: 0.06rem !important;
+}
+
+html.nav-compact .container {
+    padding: 3px 0px;
+}
+
+html.page-compact .main {
+  transform-origin: top center;
+  transform: scale(var(--page-scale, 1));
+}
+
 .main {
   margin-top: 70px; /* Add a top margin to avoid content overlay */
 }

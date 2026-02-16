@@ -36,6 +36,107 @@
   }
   </script>
 
+  <script>
+    (function() {
+      var SCALE_FLAGS = {
+        // Toggle this to enable/disable navbar scaling.
+        scaleNavbar: true,
+        // Page scaling is allowed only when scaleNavbar is true.
+        scalePageWithNavbar: true,
+        // Prevent unreadably small UI.
+        minScale: 0.5
+      };
+
+      function resetScaleState(root) {
+        root.classList.remove('nav-compact');
+        root.classList.remove('page-compact');
+        root.style.setProperty('--nav-scale', '1');
+        root.style.setProperty('--page-scale', '1');
+      }
+
+      function hasNavWrap(links) {
+        if (!links.length) {
+          return false;
+        }
+
+        var firstTop = links[0].offsetTop;
+        for (var i = 1; i < links.length; i += 1) {
+          if (links[i].offsetTop > firstTop + 1) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      function syncNavSingleLine() {
+        var root = document.documentElement;
+        var navScalingEnabled = Boolean(SCALE_FLAGS.scaleNavbar);
+        var pageScalingEnabled = navScalingEnabled && Boolean(SCALE_FLAGS.scalePageWithNavbar);
+        var minScale = Number(SCALE_FLAGS.minScale);
+        if (!Number.isFinite(minScale)) {
+          minScale = 0.8;
+        }
+        minScale = Math.max(0.5, Math.min(1, minScale));
+
+        resetScaleState(root);
+
+        var navRow = document.querySelector('.topnav .center');
+        if (!navRow) {
+          return;
+        }
+
+        var links = navRow.querySelectorAll('a');
+        if (!links.length) {
+          return;
+        }
+
+        var wrapped = hasNavWrap(links);
+        if (!wrapped || !navScalingEnabled) {
+          return;
+        }
+
+        root.classList.add('nav-compact');
+
+        var navHost = document.querySelector('.topnav');
+        if (!navHost) {
+          return;
+        }
+
+        // Measure overflow in compact mode and compute one shared factor.
+        root.style.setProperty('--nav-scale', '1');
+        root.style.setProperty('--page-scale', '1');
+        void navRow.offsetWidth;
+
+        var neededWidth = navRow.scrollWidth;
+        var availableWidth = navHost.clientWidth;
+        var scale = 1;
+        if (availableWidth > 0 && neededWidth > availableWidth) {
+          scale = availableWidth / neededWidth;
+        }
+        scale = Math.max(minScale, Math.min(1, scale));
+        root.style.setProperty('--nav-scale', scale.toFixed(4));
+
+        if (pageScalingEnabled && scale < 1) {
+          root.classList.add('page-compact');
+          root.style.setProperty('--page-scale', scale.toFixed(4));
+        }
+      }
+
+      var resizeTimer = null;
+      window.addEventListener('resize', function() {
+        window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(syncNavSingleLine, 80);
+      });
+
+      window.addEventListener('DOMContentLoaded', syncNavSingleLine);
+      window.addEventListener('load', syncNavSingleLine);
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(syncNavSingleLine);
+      }
+    })();
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
