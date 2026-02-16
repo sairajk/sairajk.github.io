@@ -223,3 +223,19 @@ ul li a {
 .main {
   margin-top: 70px; /* Add a top margin to avoid content overlay */
 }
+
+@font-face {
+  font-family: "Axure Handwriting";
+  src:
+    url("fonts/AxureHandwriting.woff2") format("woff2"),
+    url("fonts/AxureHandwriting.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.axure-handwriting {
+  font-family: "Axure Handwriting", "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
