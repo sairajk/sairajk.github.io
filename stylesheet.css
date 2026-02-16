@@ -147,6 +147,27 @@ span.highlight {
   scroll-margin-top: 80px;
 }
 
+/* Publication readability tweaks: separate title/authors/venue more clearly */
+.pub-list tr > td:nth-child(2) > a papertitle {
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+.pub-list tr > td:nth-child(2) > font {
+  display: block;
+  margin-top: 2px;
+  line-height: 1.0;
+}
+
+.pub-list tr > td:nth-child(2) > font > em {
+  display: inline-block;
+  margin-top: 5px;
+  color: #1f5f99;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
 /* For the Navigation Bar */
 .topnav {
   overflow: hidden;
