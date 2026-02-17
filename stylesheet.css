@@ -142,7 +142,7 @@ span.highlight {
 
 /* Prevent fixed navbar from covering anchor targets */
 #about,
-#publications,
+#research,
 #projects {
   scroll-margin-top: 80px;
 }
