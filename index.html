@@ -914,6 +914,40 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
+            <!-- PROJECT - VIDEO INTERPOLATION -->
+            <tr onmouseout="proj_vidint_stop()" onmouseover="proj_vidint_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='proj_vidint_image'><img src='images/Proj-vidint_after.jpg' width="100%"></div>
+                  <img src='images/Proj-vidint_before.jpg' width="100%">
+                </div>
+                <script type="text/javascript">
+                  function proj_vidint_start() {
+                    document.getElementById('proj_vidint_image').style.opacity = "1";
+                  }
+
+                  function proj_vidint_stop() {
+                    document.getElementById('proj_vidint_image').style.opacity = "0";
+                  }
+                  proj_vidint_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle;text-align:justify">
+                <a href=".">
+                  <papertitle><font size="3">Generative Video Frame Interpolation</font></papertitle>
+                </a>
+                <br><br>
+                <font size="3">
+                Developed a training-free recursive mid-frame interpolation technique, matching specialized baselines on short videos while improving identity preservation and reducing drift in longer sequences.
+                </font>
+                <br>
+                <p></p>
+                <!-- LINKS -->
+                <p></p>
+              </td>
+            </tr>
+            
+            
             <!-- PROJECT - SALIENCY DETECTION, CVPR19, PyTorch -->
             <tr onmouseout="proj_sod_stop()" onmouseover="proj_sod_start()">
               <td style="padding:20px;width:25%;vertical-align:middle">
