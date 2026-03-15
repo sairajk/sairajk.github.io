@@ -916,6 +916,42 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
+            <!-- PROJECT - SPEECH ENHANCEMENT -->
+            <tr onmouseout="proj_speechenc_stop()" onmouseover="proj_speechenc_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='proj_speechenc_image'><img src='images/Proj-speechenc.jpg' width="100%"></div>
+                  <img src='images/Proj-speechenc.jpg' width="100%">
+                </div>
+                <script type="text/javascript">
+                  function proj_speechenc_start() {
+                    document.getElementById('proj_speechenc_image').style.opacity = "1";
+                  }
+
+                  function proj_speechenc_stop() {
+                    document.getElementById('proj_speechenc_image').style.opacity = "0";
+                  }
+                  proj_speechenc_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle;text-align:justify">
+                <a href=".">
+                  <papertitle><font size="3">RL-based Speech Enhancement</font></papertitle>
+                </a>
+                <br><br>
+                <font size="3">
+                Developed a PPO-based fine-tuning pipeline for multichannel speech enhancement, improving speech quality 
+                (<a href="https://en.wikipedia.org/wiki/Perceptual_Evaluation_of_Speech_Quality" target="_blank"><font size="3">PESQ</font></a>) by 5.3% 
+                over a supervised baseline on the <a href="https://github.com/CHiME9-ECHI/CHiME9-ECHI" target="_blank"><font size="3">CHiME9-ECHI</font></a> dataset.
+                </font>
+                <br>
+                <p></p>
+                <!-- LINKS -->
+                <p></p>
+              </td>
+            </tr>
+
+            
             <!-- PROJECT - VIDEO INTERPOLATION -->
             <tr onmouseout="proj_vidint_stop()" onmouseover="proj_vidint_start()">
               <td style="padding:20px;width:25%;vertical-align:middle">
